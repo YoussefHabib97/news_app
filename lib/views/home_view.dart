@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/widgets/categories_list_view.dart';
+import 'package:news_app/widgets/news_list_view.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({
@@ -31,7 +32,27 @@ class HomeView extends StatelessWidget {
           ],
         ),
       ),
-      body: const CategoriesListView(),
+      body: const Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16.0),
+        child: CustomScrollView(
+          physics: BouncingScrollPhysics(),
+          slivers: [
+            SliverToBoxAdapter(
+              child: CategoriesListView(),
+            ),
+            SliverToBoxAdapter(
+              child: NewsListView(),
+            ),
+          ],
+        ),
+        // Column(
+        //   children: [
+        //     CategoriesListView(),
+        //     SizedBox(height: 16),
+        //     Expanded(child: NewsListView()),
+        //   ],
+        // ),
+      ),
     );
   }
 }
