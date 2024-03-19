@@ -30,7 +30,27 @@ class HomeView extends StatelessWidget {
           ],
         ),
       ),
-      body: const Column(),
+      body: Container(
+        width: 200,
+        height: 100,
+        decoration: BoxDecoration(
+          image: const DecorationImage(
+            fit: BoxFit.fill,
+            image: AssetImage('assets/business.avif'),
+          ),
+          borderRadius: BorderRadius.circular(16),
+        ),
+        child: const Center(
+          child: Text(
+            "Sports",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
