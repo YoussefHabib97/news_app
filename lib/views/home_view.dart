@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/widgets/category_card.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({
@@ -30,27 +31,7 @@ class HomeView extends StatelessWidget {
           ],
         ),
       ),
-      body: Container(
-        width: 200,
-        height: 100,
-        decoration: BoxDecoration(
-          image: const DecorationImage(
-            fit: BoxFit.fill,
-            image: AssetImage('assets/business.avif'),
-          ),
-          borderRadius: BorderRadius.circular(16),
-        ),
-        child: const Center(
-          child: Text(
-            "Sports",
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
-      ),
+      body: const CategoryCard(),
     );
   }
 }
