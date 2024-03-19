@@ -7,23 +7,26 @@ class CategoryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 200,
-      height: 100,
-      decoration: BoxDecoration(
-        image: const DecorationImage(
-          fit: BoxFit.fill,
-          image: AssetImage('assets/business.avif'),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      child: Container(
+        width: 160,
+        height: 85,
+        decoration: BoxDecoration(
+          image: const DecorationImage(
+            fit: BoxFit.fill,
+            image: AssetImage('assets/business.avif'),
+          ),
+          borderRadius: BorderRadius.circular(16),
         ),
-        borderRadius: BorderRadius.circular(16),
-      ),
-      child: const Center(
-        child: Text(
-          "Sports",
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 18,
-            fontWeight: FontWeight.bold,
+        child: const Center(
+          child: Text(
+            "Sports",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
       ),
