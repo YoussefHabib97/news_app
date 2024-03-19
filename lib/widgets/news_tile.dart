@@ -18,22 +18,22 @@ class NewsTile extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 12),
-        Text(
+        const Text(
           "Large title should be placed here",
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
-          style: const TextStyle(
+          style: TextStyle(
             color: Colors.black87,
             fontSize: 20,
             fontWeight: FontWeight.bold,
           ),
         ),
         const SizedBox(height: 8),
-        Text(
+        const Text(
           "and here is the description of the news you can place and here is the description of the news you can place and here is the description of the news you can place",
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
-          style: const TextStyle(
+          style: TextStyle(
             color: Colors.grey,
             fontSize: 14,
           ),
