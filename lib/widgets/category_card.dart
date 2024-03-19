@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/models/category_model.dart';
 
 class CategoryCard extends StatelessWidget {
   const CategoryCard({
     super.key,
+    required this.category,
   });
+
+  final CategoryModel category;
 
   @override
   Widget build(BuildContext context) {
@@ -13,16 +17,16 @@ class CategoryCard extends StatelessWidget {
         width: 160,
         height: 85,
         decoration: BoxDecoration(
-          image: const DecorationImage(
+          image: DecorationImage(
             fit: BoxFit.fill,
-            image: AssetImage('assets/business.avif'),
+            image: AssetImage(category.image),
           ),
           borderRadius: BorderRadius.circular(16),
         ),
-        child: const Center(
+        child: Center(
           child: Text(
-            "Sports",
-            style: TextStyle(
+            category.categoryName,
+            style: const TextStyle(
               color: Colors.white,
               fontSize: 18,
               fontWeight: FontWeight.bold,
