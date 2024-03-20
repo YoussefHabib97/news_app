@@ -37,7 +37,8 @@ class NewsTile extends StatelessWidget {
             color: Colors.grey,
             fontSize: 14,
           ),
-        )
+        ),
+        const SizedBox(height: 16),
       ],
     );
   }
