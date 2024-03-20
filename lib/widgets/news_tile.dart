@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/models/article_model.dart';
 
 class NewsTile extends StatelessWidget {
-  const NewsTile({super.key});
+  final ArticleModel article;
+  const NewsTile({super.key, required this.article});
 
   @override
   Widget build(BuildContext context) {
@@ -10,30 +12,37 @@ class NewsTile extends StatelessWidget {
       children: [
         ClipRRect(
           borderRadius: BorderRadius.circular(6),
-          child: Image.asset(
-            'assets/business.avif',
-            fit: BoxFit.cover,
-            width: double.infinity,
-            height: 200,
-          ),
+          child: article.image != null
+              ? Image.network(
+                  article.image!,
+                  width: double.infinity,
+                  height: 200,
+                  fit: BoxFit.cover,
+                )
+              : Image.asset(
+                  'assets/general.avif',
+                  width: double.infinity,
+                  height: 200,
+                  fit: BoxFit.cover,
+                ),
         ),
         const SizedBox(height: 12),
-        const Text(
-          "Large title should be placed here",
+        Text(
+          article.title,
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
-          style: TextStyle(
+          style: const TextStyle(
             color: Colors.black87,
             fontSize: 20,
             fontWeight: FontWeight.bold,
           ),
         ),
         const SizedBox(height: 8),
-        const Text(
-          "and here is the description of the news you can place and here is the description of the news you can place and here is the description of the news you can place",
+        Text(
+          article.subTitle ?? '',
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
-          style: TextStyle(
+          style: const TextStyle(
             color: Colors.grey,
             fontSize: 14,
           ),

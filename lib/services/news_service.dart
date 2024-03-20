@@ -4,8 +4,8 @@ import 'package:news_app/models/article_model.dart';
 // const apiKey = "670b9934e98d47e2ac36f3cf18031a64";
 
 class NewsService {
-  final Dio dio;
-  NewsService(this.dio);
+  final Dio dio = Dio();
+  NewsService();
 
   Future<List<ArticleModel>> getNews() async {
     final response = await dio.get(
