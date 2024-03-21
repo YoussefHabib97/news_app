@@ -11,7 +11,7 @@ class NewsListViewBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-      future: NewsService().getNews(),
+      future: NewsService().getNews(category: 'general'),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const SliverToBoxAdapter(
