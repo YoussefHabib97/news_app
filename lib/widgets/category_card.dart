@@ -15,7 +15,9 @@ class CategoryCard extends StatelessWidget {
     return GestureDetector(
       onTap: () => Navigator.of(context).push(
         MaterialPageRoute(
-          builder: (context) => const CategoryView(),
+          builder: (context) => CategoryView(
+            category: category.categoryName,
+          ),
         ),
       ),
       child: Padding(

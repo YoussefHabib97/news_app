@@ -3,15 +3,22 @@ import 'package:news_app/services/news_service.dart';
 import 'package:news_app/widgets/error_message.dart';
 import 'package:news_app/widgets/news_list_view.dart';
 
-class NewsListViewBuilder extends StatelessWidget {
+class NewsListViewBuilder extends StatefulWidget {
+  final String category;
   const NewsListViewBuilder({
     super.key,
+    required this.category,
   });
 
   @override
+  State<NewsListViewBuilder> createState() => _NewsListViewBuilderState();
+}
+
+class _NewsListViewBuilderState extends State<NewsListViewBuilder> {
+  @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-      future: NewsService().getNews(category: 'general'),
+      future: NewsService().getTopHeadlines(category: widget.category),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const SliverToBoxAdapter(
